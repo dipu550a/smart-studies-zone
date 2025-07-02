@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Smart Studies Zone</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="bg-dark text-white text-center p-3">
+        <h1><i class="fas fa-user-shield"></i> Admin Panel</h1>
+        <a href="index.html" class="btn btn-sm btn-outline-light mt-2">View User App</a>
+    </header>
+
+    <main class="container my-4">
+        <div class="alert alert-warning">
+            <strong>Note:</strong> All data is saved in your browser's local storage. There is no server backup. Clearing your browser data will erase all content.
+        </div>
+
+        <div class="accordion" id="adminAccordion">
+            
+            <!-- Settings -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSettings">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSettings">
+                        App Settings
+                    </button>
+                </h2>
+                <div id="collapseSettings" class="accordion-collapse collapse show" data-bs-parent="#adminAccordion">
+                    <div class="accordion-body">
+                        <form id="settings-form">
+                            <div class="mb-3">
+                                <label for="ads-count" class="form-label">Number of Ads to Display</label>
+                                <input type="number" class="form-control" id="ads-count" min="0" value="0">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Settings</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Helper function to generate accordion items -->
+            <script>
+                function createAccordionItem(id, title, formContent, listContainerId) {
+                    return `
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${id}">
+                                Manage ${title}
+                            </button>
+                        </h2>
+                        <div id="collapse-${id}" class="accordion-collapse collapse" data-bs-parent="#adminAccordion">
+                            <div class="accordion-body">
+                                <h5>Add New ${title}</h5>
+                                <form id="form-${id}" class="mb-4 p-3 border rounded">
+                                    ${formContent}
+                                </form>
+                                <h5>Existing ${title}</h5>
+                                <div id="${listContainerId}" class="list-group">
+                                    <!-- Existing items will be listed here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+                }
+            </script>
+            
+            <div id="content-management-sections">
+                <!-- All content sections will be injected here by admin.js -->
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Data Manager -->
+    <script src="js/data.js"></script>
+    <!-- Admin Logic -->
+    <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* General Body & Theming */
+body {
+    background-color: #f8f9fa;
+    padding-bottom: 80px; /* Space for fixed footer */
+}
+
+.section-title {
+    border-bottom: 2px solid #0d6efd;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Card Styles */
+.card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border: 1px solid #ddd;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.card .btn {
+    width: 100%;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: #0d6efd;
+}
+
+/* Fixed Footer Navigation */
+.footer-nav {
+    border-top: 1px solid #dee2e6;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.footer-nav .nav-link {
+    color: #6c757d;
+    font-size: 0.8rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.footer-nav .nav-link i {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.footer-nav .nav-link:hover {
+    color: #0d6efd;
+}
+
+/* Admin Panel Specific Styles */
+#adminAccordion .accordion-body h5 {
+    margin-top: 1rem;
+    color: #495057;
+}
+
+.list-group-item .btn-danger {
+    float: right;
+}
+
+.list-group-item span {
+    display: inline-block;
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+/* Ad Placeholder */
+#ad-container .ad-placeholder {
+    height: 60px;
+    background-color: #e9ecef;
+    border: 1px dashed #ced4da;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    margin-top: 15px;
+}
